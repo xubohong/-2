@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#tishiyu{
+			color: red;
+		}
+	</style>
+
+</head>
+<body>
+	登录 :<input id="phone" type="text" name=""></br>
+	密码 : <input id="password" type="text" name=""></br>
+	<div id="tishiyu"></div>	
+	<input type="button" value="确定" onclick="denglu()"/>
+	<input type="button" value="重置" onclick="chongzhi()"/>
+	
+</body>
+
+<script type="text/javascript">
+function denglu(){
+	var num1=document.getElementById("phone").value;
+	var num2=document.getElementById("password").value;
+	if(num1=="18013871290" && num2=="123456"){
+		// alert("恭喜你，登录成功！");
+		document.getElementById("tishiyu").innerText = "恭喜你，登录成功！";
+	}else if(num1=="" && num2==""){
+		document.getElementById("tishiyu").innerText="登录和密码不能为空";
+	}else{
+		// alert("请输入正确的内容");
+		document.getElementById("tishiyu").innerText = "请输入正确的内容";
+	}
+
+}
+function chongzhi(){
+	// var num1=document.getElementById("phone").value;
+	// var num2=document.getElementById("password").value;
+	// num1=empty();
+	// num2=empty();
+	document.getElementById("phone").value = '';
+	document.getElementById("password").value = '';
+}
+</script>
+</html>

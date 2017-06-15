@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#nameTishi,#personTishi,#phoneTishi,#addressTishi,#successTishi{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	*项目名称:<input id="mingcheng" type="text" ><br/>
+	<div id="nameTishi"></div>
+	*负责人:<input id="person" type="text" ><br/>
+	<div id="personTishi"></div>
+	*负责人电话:<input id="phone" type="text" ><br/>
+	<div id="phoneTishi"></div>
+	*项目地点:<input id="address" type="text" ><br/>
+	<div id="addressTishi"></div>
+	详细地址:<input id="detail" type="text" ><br/>
+	<input type="button" value="保存"  onclick="queding()"/>
+	<input type="button" value="取消" onclick="quxiao()" />
+	<div id="successTishi"></div>
+</body>
+<script type="text/javascript">
+function queding(){
+	var name_flag = false;
+	var person_flag = false;
+	var phone_flag = false;
+	var address_flag = false;
+
+
+	var name=document.getElementById("mingcheng").value;
+	if(name == ''){
+		document.getElementById("nameTishi").innerText="请填写项目名称";
+		name_flag = false;
+		// return;//停止执行的意思   后面的代码不会继续执行
+	}else{
+		//如果能走到这一行，表示前面的判断肯定通过了，肯定是非空的
+		if(name.length>15){
+			document.getElementById("nameTishi").innerText="最多15个字";
+			name_flag = false;
+			// return;
+		}else{
+			document.getElementById("nameTishi").innerText="";//清空了
+			name_flag = true;
+		}
+	}
+	
+	var person=document.getElementById("person").value;
+	if(person==""){
+		document.getElementById("personTishi").innerText="请填写负责人名称";
+		person_flag=false;
+		// return;
+	}else{
+		if(person.length>15){
+			document.getElementById("personTishi").innerText=" 负责人最多15个字";
+			person_flag=false;
+		// return;
+		}else{
+		 document.getElementById("personTishi").innerText=" ";
+		 person_flag=true;
+		}
+	}
+	
+	var phone=document.getElementById("phone").value;
+	if(phone ==""){
+		document.getElementById("phoneTishi").innerText="请填写负责人电话";
+		phone_flag = false;
+		// return;
+	}else{
+		document.getElementById("phoneTishi").innerText="";
+		phone_flag = true;
+	}
+
+	var address=document.getElementById("address").value;
+	if(address==""){
+		document.getElementById("addressTishi").innerText="项目地址不能为空";
+		address_flag = false;
+	}else{
+		document.getElementById("addressTishi").innerText="";
+		address_flag = true;
+	}
+
+	if(name_flag && person_flag && phone_flag && address_flag){
+		//document.getElementById("successTishi").innerText="保存成功!";
+		//教你个新的方法   innerHTML
+		document.getElementById("successTishi").innerHTML="<span style='color:red; font-size: 20px'>保存成功!</span>";
+	}
+
+
+	// if( name==""  || name.length>15 && person=="" || person.length>15 && phone=="" && address==""  ){
+	// 	document.getElementById("nameTishi").innerText="请填写项目名称";
+	// 	document.getElementById("nameTishi").innerText="最多15个字";
+	// 	document.getElementById("personTishi").innerText="请填写负责人名称";
+	// 	document.getElementById("personTishi").innerText="最多15个字";
+	// 	document.getElementById("phoneTishi").innerText="请填写负责人电话";
+	// 	document.getElementById("addresTishi").innerText="项目地址不能为空";
+	// }else {
+	// 		alert("保存成功！");
+	// }
+	
+}
+function quxiao(){
+	document.getElementById("mingcheng").value="";
+	document.getElementById("person").value="";
+	document.getElementById("phone").value="";
+	document.getElementById("address").value="";
+	document.getElementById("detail").value="";
+	document.getElementById("successTishi").innerText="";
+
+}
+
+</script>
+</html>

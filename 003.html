@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	 <div>1+2+3+...+100=</div>
+	 <div id="sum"></div>
+	<input type="button" value="总和"  onclick="zonghe()"/>
+	<div>2+4+6+8+...100=</div>
+	<div id="evenNum"></div>
+	<input type="button" value="偶数和" onclick="oushuhe()"/>
+
+</body>
+<script type="text/javascript">
+	function zonghe(){
+		var i=0;
+		for(var j=0;j<=100;j++){
+			i+=j;
+			
+		}
+		document.getElementById("sum").innerHTML=i;
+	}
+	function oushuhe(){
+		var sum=0;
+		for(var i=2;i<=100;i++){
+			if(i%2==0){
+				sum+=i;
+			}
+		}
+		document.getElementById("evenNum").innerHTML=sum;
+	}
+
+</script>
+</html>
